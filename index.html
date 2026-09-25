@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto - Estilo Undertale</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'title': ['"Press Start 2P"', 'cursive'], // Para títulos y navegación
+                        'body': ['"VT323"', 'monospace'],         // Para párrafos y textos largos
+                    },
+                    colors: {
+                        'ut-yellow': '#ffff00',
+                        'ut-red': '#ff0000',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            image-rendering: pixelated;
+        }
+
+        /* SVG / CSS del corazón pixelado (Alma) */
+        .pixel-heart {
+            width: 16px;
+            height: 16px;
+            background-color: transparent;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .pixel-heart::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 16px;
+            height: 16px;
+            /* Corazón pixelado generado con sombras */
+            box-shadow: 
+                2px 2px #ff0000, 4px 2px #ff0000, 10px 2px #ff0000, 12px 2px #ff0000,
+                0px 4px #ff0000, 2px 4px #ff0000, 4px 4px #ff0000, 6px 4px #ff0000, 8px 4px #ff0000, 10px 4px #ff0000, 12px 4px #ff0000, 14px 4px #ff0000,
+                0px 6px #ff0000, 2px 6px #ff0000, 4px 6px #ff0000, 6px 6px #ff0000, 8px 6px #ff0000, 10px 6px #ff0000, 12px 6px #ff0000, 14px 6px #ff0000,
+                2px 8px #ff0000, 4px 8px #ff0000, 6px 8px #ff0000, 8px 8px #ff0000, 10px 8px #ff0000, 12px 8px #ff0000,
+                4px 10px #ff0000, 6px 10px #ff0000, 8px 10px #ff0000, 10px 10px #ff0000,
+                6px 12px #ff0000, 8px 12px #ff0000;
+        }
+
+        /* Utilidad para las cajas de estilo diálogo */
+        .ut-box {
+            border: 6px solid white;
+            background-color: black;
+            padding: 1.5rem;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col font-body text-xl selection:bg-ut-yellow selection:text-black">
+
+    <header class="sticky top-0 z-50 bg-black border-b-[6px] border-white py-4 px-6 md:px-12">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+            <!-- Logo -->
+            <a href="#" class="font-title text-xl md:text-2xl hover:text-ut-yellow transition-colors group flex items-center gap-3">
+                <div class="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                    <div class="pixel-heart scale-[0.8] translate-y-[-4px]"></div>
+                </div>
+                <span>PROYECTO</span>
+            </a>
+
+            <!-- Enlaces de navegación -->
+            <nav class="flex flex-wrap justify-center gap-6 md:gap-10 font-title text-[10px] md:text-xs">
+                <a href="#inicio" class="group flex items-center gap-2 hover:text-ut-yellow transition-colors">
+                    <div class="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity hidden md:block">
+                        <div class="pixel-heart scale-[0.6] translate-y-[-6px]"></div>
+                    </div>
+                    INICIO
+                </a>
+                <a href="#sobre-mi" class="group flex items-center gap-2 hover:text-ut-yellow transition-colors">
+                    <div class="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity hidden md:block">
+                        <div class="pixel-heart scale-[0.6] translate-y-[-6px]"></div>
+                    </div>
+                    SOBRE MI
+                </a>
+                <a href="#caracteristicas" class="group flex items-center gap-2 hover:text-ut-yellow transition-colors">
+                    <div class="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity hidden md:block">
+                        <div class="pixel-heart scale-[0.6] translate-y-[-6px]"></div>
+                    </div>
+                    FEATURES
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="flex-grow w-full max-w-5xl mx-auto p-6 flex flex-col gap-12 mt-8">
+        
+        <!-- Sección Inicio (Hero) -->
+        <section id="inicio" class="ut-box text-2xl md:text-4xl leading-relaxed min-h-[300px] flex items-center">
+            <div class="flex items-start w-full">
+                <span class="mr-4 text-4xl md:text-5xl leading-none">*</span>
+                <p>
+                    Bienvenido a la página principal.<br><br>
+                    Ver este diseño completamente funcional y adaptativo...<br>
+                    <span class="text-ut-yellow block mt-4">Te llena de DETERMINACIÓN.</span>
+                </p>
+            </div>
+        </section>
+
+        <section id="sobre-mi" class="flex flex-col gap-6 mt-8">
+            <h2 class="font-title text-xl md:text-2xl text-center mb-4">-- ESTADO DEL PROYECTO --</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Estadísticas falsas estilo RPG -->
+                <div class="ut-box flex flex-col justify-center text-2xl md:text-3xl">
+                    <p class="font-title text-sm md:text-base mb-6">"EL DESARROLLADOR" LV 20</p>
+                    <div class="flex items-center gap-4 mb-2">
+                        <span class="font-title text-sm">HP</span>
+                        <div class="w-full max-w-[200px] h-6 bg-red-600 relative">
+                            <div class="absolute top-0 left-0 h-full bg-ut-yellow w-full"></div>
+                        </div>
+                        <span class="font-title text-sm">99/99</span>
+                    </div>
+                    <p class="mt-4">ATK 50 (Creatividad)</p>
+                    <p>DEF 25 (Café)</p>
+                </div>
+
+                <div class="ut-box text-2xl md:text-3xl leading-snug flex items-center">
+                    <p>
+                        <span class="mr-2">*</span> Este proyecto fue creado con HTML, Tailwind CSS y mucha paciencia.<br><br>
+                        <span class="mr-2">*</span> Su objetivo es demostrar que la web puede ser divertida y nostálgica.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="caracteristicas" class="mt-12 mb-16">
+            <h2 class="font-title text-xl md:text-2xl text-center mb-10">-- HABILIDADES --</h2>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                <!-- Feature 1 -->
+                <div class="ut-box hover:border-ut-yellow transition-colors group cursor-default">
+                    <div class="flex justify-center mb-4 opacity-50 group-hover:opacity-100">
+                        <div class="pixel-heart"></div>
+                    </div>
+                    <h3 class="font-title text-sm text-center mb-4 group-hover:text-ut-yellow">Diseño Retro</h3>
+                    <p class="text-xl text-center leading-tight">Usa tipografías clásicas y bordes afilados para simular los 8-bits.</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="ut-box hover:border-ut-yellow transition-colors group cursor-default">
+                    <div class="flex justify-center mb-4 opacity-50 group-hover:opacity-100">
+                        <div class="pixel-heart"></div>
+                    </div>
+                    <h3 class="font-title text-sm text-center mb-4 group-hover:text-ut-yellow">Responsivo</h3>
+                    <p class="text-xl text-center leading-tight">Se adapta perfectamente a pantallas de móvil, tablet y PC.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="ut-box hover:border-ut-yellow transition-colors group cursor-default">
+                    <div class="flex justify-center mb-4 opacity-50 group-hover:opacity-100">
+                        <div class="pixel-heart"></div>
+                    </div>
+                    <h3 class="font-title text-sm text-center mb-4 group-hover:text-ut-yellow">Ligero</h3>
+                    <p class="text-xl text-center leading-tight">Sin librerías pesadas, solo Tailwind CSS y código nativo.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="border-t-[6px] border-white py-8 text-center bg-black mt-auto">
+        <div class="flex flex-col items-center gap-4">
+            <p class="font-title text-[10px] md:text-xs">
+                (C) 2026 PROYECTO WEB. MANTÉN TU DETERMINACIÓN.
+            </p>
+            
+            <button class="font-title text-[10px] md:text-xs px-6 py-3 border-[3px] border-white hover:border-ut-yellow hover:text-ut-yellow transition-colors group flex items-center gap-3">
+                <div class="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity">
+                    <div class="pixel-heart scale-[0.5] translate-y-[-6px]"></div>
+                </div>
+                CONTACTAR
+            </button>
+        </div>
+    </footer>
+
+</body>
+</html>
